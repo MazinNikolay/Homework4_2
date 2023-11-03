@@ -5,6 +5,8 @@ public class Main {
         task3(1900);
         task4(1021);
         task5(7);
+        task6(15, 81_000);
+        task7(20, 10_000, 10_000);
     }
 
     public static void task1(int clientOS) {
@@ -73,5 +75,35 @@ public class Main {
                 System.out.println("Введите корректное значение");
                 break;
         }
+    }
+
+    public static void task6(int age, int salary) {
+        double limit = 0;
+        if (age >= 23) {
+            limit = salary * 3;
+        } else limit = salary * 2;
+        if (salary >= 50_000 && salary < 80_000) {
+            limit *= 1.2;
+        } else if (salary >= 80_000) {
+            limit *= 1.5;
+        }
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + limit + " рублей");
+    }
+
+    public static void task7(int age, int salary, int wantedSum) {
+        double baseCreditRate = 1.1;
+        int creditTime = 12;
+        double maxPaymentRate = 0.5;
+        double maxPay = 0.0;
+        if (age > 23 && age < 30) {
+            baseCreditRate += 0.005;
+        } else if (age < 23) baseCreditRate += 0.01;
+        if (salary > 80_000) baseCreditRate -= 0.07;
+        maxPay = (wantedSum * baseCreditRate) / creditTime;
+        String maxPayStr = String.format("%.2f", maxPay);
+        if (maxPay > (salary * maxPaymentRate)) {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxPayStr + " рублей. Платеж по кредиту " + wantedSum + " рублей. Отказано");
+        } else
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxPayStr + " рублей. Платеж по кредиту " + wantedSum + " рублей. Одобрено");
     }
 }
