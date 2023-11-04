@@ -7,6 +7,7 @@ public class Main {
         task5(7);
         task6(15, 81_000);
         task7(20, 10_000, 10_000);
+        taskSwitchExtended(20);
     }
 
     public static void task1(int clientOS) {
@@ -75,6 +76,16 @@ public class Main {
                 System.out.println("Введите корректное значение");
                 break;
         }
+    }
+
+    public static void taskSwitchExtended(int var){
+        String s=
+                switch (var){
+                    case 0 -> "0";
+                    case 1 -> "one";
+                    default -> "NoOne";
+                };
+        System.out.println(s);
     }
 
     public static void task6(int age, int salary) {
