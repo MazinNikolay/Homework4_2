@@ -78,9 +78,9 @@ public class Main {
         }
     }
 
-    public static void taskSwitchExtended(int var){
-        String s=
-                switch (var){
+    public static void taskSwitchExtended(int var) {
+        String s =
+                switch (var) {
                     case 0 -> "0";
                     case 1 -> "one";
                     default -> "NoOne";
